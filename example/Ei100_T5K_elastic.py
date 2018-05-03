@@ -13,7 +13,7 @@ ss_opt = ss_optimizer.ss_optimizer("Ivs2thetabg_Ei100_T5K_elastic.xye",
                                   xmin, xmax, xmin_peak, xmax_peak)
 
 # get optimal ss for xmin, xmax range based on integrals matching function
-ss = ss_opt.run()
+ss = ss_opt.run(initial_value=1)
 print(ss)
 print("Best ss using minimize method: " + str(ss.x))
 print("\t function: ( ss*f(Ibackground)-f(Isample) )^2")

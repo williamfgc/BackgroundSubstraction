@@ -46,7 +46,7 @@ class ss_optimizer(object):
         self.fig = plt.figure()
     
     # public
-    def run(self):
+    def run(self,initial_value=1):
         
         fIbg = self.fI(self.background_x,self.background_y,
                        self.xmin, self.xmax, 
@@ -56,7 +56,7 @@ class ss_optimizer(object):
                        self.xmin, self.xmax, 
                        self.xmin_peak, self.xmax_peak)
         
-        ss = scipy.optimize.minimize(fmin, 0.5, args=(fIbg, fIs))
+        ss = scipy.optimize.minimize(fmin, initial_value, args=(fIbg, fIs))
         return ss
     
     # private
